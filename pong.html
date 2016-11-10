@@ -2,26 +2,62 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Gamedev Canvas Workshop</title>
+    <title>Pong - Ethen Strine</title>
     <style>
     	* { padding: 0; margin: 0; }
     	canvas { background: #eee; display: block; margin: 0 auto; }
     </style>
+    <style>
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+
+.button5 {
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+}
+
+.button5:hover {
+    background-color: #555555;
+    color: white;
+}
+</style>
+
 </head>
 <body>
+<h1>Hello</h1>
+
+<div class="">
+  <button class="button button5" type="button" name="Start" title="Click to start" onclick="buttonPress();">Start</button>
+  <button class="button button5" type="button" name="pause" title="Click to pause" onclick="pause()">Pause</button>
+</div>
+
 <canvas id="myCanvas"></canvas>
 
 <script>
 var canvas = document.getElementById("myCanvas");
 window.onload = window.onresize = function() {
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.height = 666;
 }
 var ctx = canvas.getContext("2d");
 var x = canvas.width/2;
 var y = canvas.height-100;
-var dx = 3;
-var dy = -3;
+var dx = 0;
+var dy = 0;
 var ballRadius = 10;
 var paddleHeight = 10;
 var paddleWidth = 75;
@@ -44,6 +80,7 @@ for(c=0; c<brickColumnCount; c++) {
 }
 var score = 0;
 var lives = 1;
+var alreadyStarted = 0;
 
 
 function drawBall() {
@@ -52,6 +89,38 @@ function drawBall() {
     ctx.fillStyle = "#0095DD";
     ctx.fill();
     ctx.closePath();
+}
+if (alreadyStarted == 0)
+{
+  function start() {
+    //alert("test")
+    dx = 2;
+    dy = -2;
+    alreadyStarted = 1
+    /*
+    dx = Math.floor(Math.random() * 5) + 2;
+    dyNoNegative = Math.floor(Math.random() * 5) + 2;
+    var negative = "-"
+    dy =
+
+    */
+  }
+}
+else {
+
+}
+function buttonPress() {
+  if (alreadyStarted == 0) {
+    start()
+  } else {
+
+  }
+}
+function pause() {
+  dx = 0;
+  dy = 0;
+  alreadyStarted = 0
+
 }
 function drawPaddle() {
     ctx.beginPath();
@@ -110,8 +179,8 @@ function mouseMoveHandler(e) {
 }
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBall();
     drawPaddle();
+    drawBall();
     drawScore();
     collisionDetection();
 
@@ -154,6 +223,7 @@ function draw() {
 }
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+
 function keyDownHandler(e) {
     if(e.keyCode == 39) {
         rightPressed = true;
