@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:100' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Allan:bold' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="/css/font-awesome.css">
     <meta charset="utf-8" />
     <title>Pong - Ethen Strine</title>
     <style>
     	* { padding: 0; margin: 0; }
     	canvas { background: #eee; display: block; margin: 0 auto; }
     </style>
+<style media="screen">
+text-shadow: 1px 1px 1px #ccc;
+}
+.div-that-you want-to-stand-out {
+box-shadow: 0 0 1em 1em #ccc;
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/kickstart.js"></script> <!-- KICKSTART -->
+<link rel="stylesheet" href="css/kickstart.css" media="all" /> <!-- KICKSTART -->
+</style>
+<style media="screen">
+h1 {
+  font-family: 'Allan', Helvetica, Arial, sans-serif;
+  font-size: 50px;
+  line-height: 70px;
+}
+
+p {
+  font-family: 'Raleway', Georgia, Times, serif;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+</style>
     <style>
 .button {
     background-color: #4CAF50; /* Green */
@@ -35,10 +63,18 @@
     color: white;
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 </head>
-<body>
-<h1>Objective: keep the ball up as long as possible.</h1>
+<body class="subpage">
+<h3>Objective: keep the ball up as long as possible.</h3>
+<div ng-app="">
+<p>Name: <input type="text" placeholder="Ethen Strine" ng-model="name"></p>
+
+<h1 style="text-align:center;" ng-bind="name"></h1>
+
+</div>
+
 
 <div class="">
   <button class="button button5" type="button" name="Start" title="Click to start" onclick="buttonPress();">Start</button>
@@ -48,6 +84,7 @@
 <canvas id="myCanvas"></canvas>
 
 <script>
+var name = document.getElementById('name')
 var canvas = document.getElementById("myCanvas");
 window.onload = window.onresize = function() {
     canvas.width = window.innerWidth;
@@ -96,7 +133,8 @@ if (alreadyStarted == 0)
     //alert("test")
     dx = 1;
     dy = -1;
-    alreadyStarted = 1
+    alreadyStarted = 1;
+    console.log("Starting Game...");
     /*
     dx = Math.floor(Math.random() * 5) + 2;
     dyNoNegative = Math.floor(Math.random() * 5) + 2;
@@ -106,9 +144,7 @@ if (alreadyStarted == 0)
     */
   }
 }
-else {
 
-}
 function buttonPress() {
   if (alreadyStarted == 0) {
     start()
@@ -119,8 +155,10 @@ function buttonPress() {
 function pause() {
   dx = 0;
   dy = 0;
-  alreadyStarted = 0
-
+  paddleX += 0;
+  paddleX -= 0;
+  alreadyStarted = 0;
+  console.log("Pausing Game...");
 }
 function drawPaddle() {
     ctx.beginPath();
