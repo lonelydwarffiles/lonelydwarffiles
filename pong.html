@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" type='text/css'>
   <link href="https://fonts.googleapis.com/css?family=Bungee+Hairline"
   <link href="https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day|Gruppo|Poiret+One|Pompiere|Share" rel="stylesheet" type='text/css'>
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.1/release/featherlight.min.css" type="text/css" rel="stylesheet" />
 <link rel="stylesheet" href="/css/font-awesome.css">
     <meta charset="utf-8" />
     <title>Pong - Ethen Strine</title>
@@ -76,7 +77,7 @@ p {
   <h1 style="text-align:center;" ng-bind="name"></h1>
 </div>
 </div>
-
+<button type="button" onclick="error()">HElol</button>
 
 <div class="">
   <button class="button button5" type="button" name="Start" title="Click to start" onclick="buttonPress();">Start</button>
@@ -120,6 +121,8 @@ for(c=0; c<brickColumnCount; c++) {
 var score = 0;
 var lives = 1;
 var alreadyStarted = 0;
+var stopdx = 1;
+var stopdy = 1;
 
 
 function drawBall() {
@@ -133,8 +136,8 @@ if (alreadyStarted == 0)
 {
   function start() {
     //alert("test")
-    dx = 1;
-    dy = -1;
+    dx = stopdx;
+    dy = stopdy;
     alreadyStarted = 1;
     console.log("Starting Game...");
     /*
@@ -147,6 +150,24 @@ if (alreadyStarted == 0)
   }
 }
 
+function error() {
+  document.fullscreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.documentElement.webkitRequestFullScreen;
+
+function requestFullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullScreen) {
+        element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+}
+  
+}
+if (document.fullscreenEnabled) {
+    requestFullscreen(document.documentElement);
+}
+}
 function buttonPress() {
   if (alreadyStarted == 0) {
     start()
@@ -154,7 +175,12 @@ function buttonPress() {
 
   }
 }
+function unp() {
+
+}
 function pause() {
+  stopdx = dx;
+  stopdy = dy;
   dx = 0;
   dy = 0;
   paddleX += 0;
@@ -283,5 +309,7 @@ function keyUpHandler(e) {
 }
 setInterval(draw, 1);
 </script>
+<script src="//code.jquery.com/jquery-latest.js"></script>
+<script src="//cdn.rawgit.com/noelboss/featherlight/1.5.1/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
