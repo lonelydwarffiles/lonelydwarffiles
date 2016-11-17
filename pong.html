@@ -77,6 +77,9 @@ p {
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="">
+
+</script>
 
 </head>
 <body class="subpage">
@@ -85,6 +88,16 @@ p {
   <h1 style="text-align:center;" ng-bind="alias"></h1>
   <h3 style="text-align:center;" ng-bind="name"></h3>
 </div>
+
+<script type="text/ng-template">
+var app = angular.module('exampleApp', ['ngDialog']);
+
+app.controller('MainCtrl', function ($scope, ngDialog) {
+  $scope.clickToOpen = function () {
+      ngDialog.open({ template: 'popupTmpl.html', className: 'ngdialog-theme-default' });
+  };
+});
+</script>
 
 <form>
 			    <h2>Please enter data</h2>
