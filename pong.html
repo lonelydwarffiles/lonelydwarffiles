@@ -31,7 +31,16 @@ h1 {
   font-size: 50px;
   line-height: 70px;
 }
-
+h3 {
+  font-family: 'Bungee Hairline', Helvetica, Arial, sans-serif;
+  font-size: 30px;
+  line-height: 50px;
+}
+h2 {
+  font-family: 'Bungee Hairline', Helvetica, Arial, sans-serif;
+  font-size: 40px;
+  line-height: 60px;
+}
 p {
   font-family: 'Gruppo', Georgia, Times, serif;
   font-size: 15px;
@@ -72,11 +81,63 @@ p {
 </head>
 <body class="subpage">
 <div ng-app="">
-<p>Name: <input type="text" placeholder="Ethen Strine" ng-model="name"></p>
 <div class="font-effect-3d">
-  <h1 style="text-align:center;" ng-bind="name"></h1>
+  <h1 style="text-align:center;" ng-bind="alias"></h1>
+  <h3 style="text-align:center;" ng-bind="name"></h3>
 </div>
-</div>
+
+<form>
+			    <h2>Please enter data</h2>
+					<!--p id="currentScore" type="text">1029pts</p-->
+			    <input id="title" type="text" ng-model="alias" placeholder="Alias" />
+			    <input id="name" type="text" ng-model="name" placeholder="Name" />
+			    <input id="tickets" type="text" placeholder="Tickets" />
+			    <input type="button" value="Save/Show" onclick="insert()" />
+			  </form>
+
+			  <div id="display"></div>
+
+
+				<script>
+				// This area declares the empty array areas as place holders.
+				var titles  = [];
+				var names   = [];
+				var tickets = [];
+				//var score = [];
+
+				// The below gets all of the all of the elements needed from the HTML above by their ID.
+				var titleInput  = document.getElementById("title");
+				var nameInput   = document.getElementById("name");
+				var ticketInput = document.getElementById("tickets");
+				//var scoreInput = document.getElementById.innerHTML("currentScore");
+
+				var messageBox  = document.getElementById("display");
+
+				// The function below inserts the values into each of the empty arrays.
+				function insert ( ) {
+				 titles.push( titleInput.value );
+				 names.push( nameInput.value );
+				 tickets.push( ticketInput.value );
+				// score.push( scoreInput.value );
+
+				 clearAndShow();
+				}
+				// This function clears out the fields when the submit button is clicked.
+				function clearAndShow () {
+				  titleInput.value = "";
+				  nameInput.value = "";
+				  ticketInput.value = "";
+				//	scoreInput.value = "";
+
+				  // Show our output
+				  messageBox.innerHTML = "";
+				  messageBox.innerHTML += "Titles: " + titles.join(", ") + "<br/>";
+				  messageBox.innerHTML += "Names: " + names.join(", ") + "<br/>";
+				  messageBox.innerHTML += "Tickets: " + tickets.join(", ") + "<br/>";
+		//			messageBox.innerHTML += "Score:" + score.join(",") + "<br/>";
+				}
+        </div>
+
 
 <div class="">
   <button class="button button5" type="button" name="Start" title="Click to start" onclick="buttonPress();">Start</button>
