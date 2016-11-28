@@ -611,10 +611,6 @@ SNAKE.Board = SNAKE.Board || (function() {
             elmPauseScreen.className = "snake-pause-screen";
             elmPauseScreen.innerHTML = "<div style='padding:10px;'>[Paused]<p/>Press [space] to unpause.</div>";
 
-            elmAboutPanel = document.createElement("div");
-            elmAboutPanel.className = "snake-panel-component";
-            elmAboutPanel.innerHTML = "<a href='http://patorjk.com/blog/software/' class='snake-link'>more patorjk.com apps</a> - <a href='https://github.com/patorjk/JavaScript-Snake' class='snake-link'>source code</a>";
-
             elmLengthPanel = document.createElement("div");
             elmLengthPanel.className = "snake-panel-component";
             elmLengthPanel.innerHTML = "Length: 1";
