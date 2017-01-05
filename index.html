@@ -12,15 +12,142 @@ iframe {
 		margin: 0 auto;
 		border: 0;
 }
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+* {
+  box-sizing: inherit;
+  transition-property: all;
+  transition-duration: .6s;
+  transition-timing-function: ease;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: $red;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.buttons {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: table-cell;
+  padding: 1em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+h1 {
+  color: $white;
+  font-size: 1.25em;
+  font-weight: 900;
+  margin: 0 0 2em;
+
+  @media (min-width: 450px) {
+    font-size: 1.75em;
+  }
+
+  @media (min-width: 760px) {
+    font-size: 3.25em;
+  }
+
+  @media (min-width: 900px) {
+    font-size: 5.25em;
+    margin: 0 0 1em;
+  }
+}
+
+p {
+  color: $white;
+  font-size: 12px;
+
+  @media(min-width: 600px) {
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    top: 90%;
+  }
+
+  @media(max-height: 500px) {
+    left: 0;
+    position: relative;
+    top: 0;
+    transform: translate(0, 0);
+  }
+
+  a {
+    background: rgba($white, 0);
+    border-bottom: 1px solid;
+    color: $white;
+    line-height: 1.4;
+    padding: .25em;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba($white, 1);
+      color: $red;
+    }
+  }
+}
+.btn-2 {
+    letter-spacing: 0;
+}
+
+.btn-2:hover,
+.btn-2:active {
+  letter-spacing: 5px;
+}
+
+.btn-2:after,
+.btn-2:before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.btn-2:hover:after,
+.btn-2:hover:before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 70%;
+}
+
+.btn-2:hover:before {
+  bottom: auto;
+  top: 0;
+  width: 70%;
+}
 </style>
+<STYLE>
+<!--
+A{text-decoration:none}
+-->
+</STYLE>
 
 	</head>
 	<body>
 		<body background="images/eye.jpg">
+			<br>
 			<h1 align="center">Thanks for visting!</h1>
-			<h2 align="center">If you're looking for t-shirts click (<a href="https://shop.spreadshirt.com/dwarvendesigns?noCache=true">here</a>)</h2>
-			<iframe align="center" width="75%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300856158&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
-	</body>
+			<h2 align="center"><a href="https://shop.spreadshirt.com/dwarvendesigns?noCache=true" class="btn btn-2" title="A collection of shirts">Shirts</a></h2>
+<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/300856158&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 	<footer><p align="center">
 		© Ethen Strine
 	</p></footer>
