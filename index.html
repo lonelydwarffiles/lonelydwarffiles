@@ -4,6 +4,100 @@
 		<meta charset="utf-8">
 		<title>Ethen Strine</title>
 		<link rel="favicon" href="images/favicon.ico" sizes="16x16">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+		<script src+"assets/js/pace.min.js">
+
+		</script>
+<style media="screen">
+.sk-folding-cube {
+margin: 20px auto;
+width: 40px;
+height: 40px;
+position: relative;
+-webkit-transform: rotateZ(45deg);
+				transform: rotateZ(45deg);
+}
+
+.sk-folding-cube .sk-cube {
+float: left;
+width: 50%;
+height: 50%;
+position: relative;
+-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+				transform: scale(1.1);
+}
+.sk-folding-cube .sk-cube:before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #333;
+-webkit-animation: sk-foldCubeAngle 2.4s infinite linear both;
+				animation: sk-foldCubeAngle 2.4s infinite linear both;
+-webkit-transform-origin: 100% 100%;
+		-ms-transform-origin: 100% 100%;
+				transform-origin: 100% 100%;
+}
+.sk-folding-cube .sk-cube2 {
+-webkit-transform: scale(1.1) rotateZ(90deg);
+				transform: scale(1.1) rotateZ(90deg);
+}
+.sk-folding-cube .sk-cube3 {
+-webkit-transform: scale(1.1) rotateZ(180deg);
+				transform: scale(1.1) rotateZ(180deg);
+}
+.sk-folding-cube .sk-cube4 {
+-webkit-transform: scale(1.1) rotateZ(270deg);
+				transform: scale(1.1) rotateZ(270deg);
+}
+.sk-folding-cube .sk-cube2:before {
+-webkit-animation-delay: 0.3s;
+				animation-delay: 0.3s;
+}
+.sk-folding-cube .sk-cube3:before {
+-webkit-animation-delay: 0.6s;
+				animation-delay: 0.6s;
+}
+.sk-folding-cube .sk-cube4:before {
+-webkit-animation-delay: 0.9s;
+				animation-delay: 0.9s;
+}
+@-webkit-keyframes sk-foldCubeAngle {
+0%, 10% {
+	-webkit-transform: perspective(140px) rotateX(-180deg);
+					transform: perspective(140px) rotateX(-180deg);
+	opacity: 0;
+} 25%, 75% {
+	-webkit-transform: perspective(140px) rotateX(0deg);
+					transform: perspective(140px) rotateX(0deg);
+	opacity: 1;
+} 90%, 100% {
+	-webkit-transform: perspective(140px) rotateY(180deg);
+					transform: perspective(140px) rotateY(180deg);
+	opacity: 0;
+}
+}
+
+@keyframes sk-foldCubeAngle {
+0%, 10% {
+	-webkit-transform: perspective(140px) rotateX(-180deg);
+					transform: perspective(140px) rotateX(-180deg);
+	opacity: 0;
+} 25%, 75% {
+	-webkit-transform: perspective(140px) rotateX(0deg);
+					transform: perspective(140px) rotateX(0deg);
+	opacity: 1;
+} 90%, 100% {
+	-webkit-transform: perspective(140px) rotateY(180deg);
+					transform: perspective(140px) rotateY(180deg);
+	opacity: 0;
+}
+}
+</style>
 <style>
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,900);
@@ -169,6 +263,7 @@ p {
 }
 </style>
 </style>
+
 <STYLE>
 <!--
 A{text-decoration:none}
@@ -188,11 +283,56 @@ p {
     font-size: 150%;
 }
 </style>
+<style media="screen">
+.pace {
+-webkit-pointer-events: none;
+pointer-events: none;
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+}
+
+.pace-inactive {
+display: none;
+}
+
+.pace .pace-progress {
+background-color: rgba(0, 0, 0, 0.19999999999999996);
+position: fixed;
+z-index: -1;
+top: 0;
+right: 100%;
+bottom: 0;
+width: 100%;
+}
+</style>
+<style media="screen">
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript,
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+position: fixed;
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+z-index: 9999;
+background: url(images/loader-64x/Preloader_2.gif) center no-repeat #fff;
+}
+</style>
 	</head>
-	<body>
+	<div class="sk-folding-cube">
+	  <div class="sk-cube1 sk-cube"></div>
+	  <div class="sk-cube2 sk-cube"></div>
+	  <div class="sk-cube4 sk-cube"></div>
+	  <div class="sk-cube3 sk-cube"></div>
+	</div>
 		<body background="images/bckgrnd2.png">
+			<div class="se-pre-con"></div>
 <br>
-<div <div style="font-family: 'Amatic SC', cursive;">
+ <div style="font-family: 'Amatic SC', cursive;">
 			<h2 align="center">Thanks for visting!</h2>
 	</div>
 <!--Link Menu-->
@@ -201,7 +341,6 @@ p {
 		  <div class="dropdown-content">
 		    <a href="https://shop.spreadshirt.com/dwarvendesigns?noCache=true">Hrandon Ball Merch</a>
 		    <a href="https://shop.spreadshirt.com/magisterj?noCache=true">Magister J Merch</a>
-				<a href="https://read.amazon.com/kp/embed?asin=B00TVCWEY8&preview=newtab&linkCode=kpe&ref_=cm_sw_r_kb_dp_o5VDybKWD0WJZ&tag=lonel02-20">Drug Dealing 101</a>
 			</div>
 		</div>
 		<br>
@@ -212,12 +351,13 @@ p {
 <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B005GFPZZO&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_IGVDyb99YDKAW&tag=lonel02-20" ></iframe> <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B004H0M8KO&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_XXVDybZXS009K&tag=lonel02-20" ></iframe> <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B00ASO8BI6&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_4ZVDyb6PPF0M7&tag=lonel02-20" ></iframe> <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B0011UCOSO&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_Y4VDyb20TMNM4&tag=lonel02-20" ></iframe>
 <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B00TVCWEY8&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_H6lGyb94DW3SY&tag=lonel02-20" ></iframe> <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B00B6TVLFW&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_77lGybZK6QQ9C&tag=lonel02-20" ></iframe> <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B009F3GAHU&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_.7lGybFKX643D&tag=lonel02-20" ></iframe> <iframe type="text/html" width="336" height="550" frameborder="0" allowfullscreen style="max-width:100%" src="https://read.amazon.com/kp/card?asin=B008BAGX52&preview=inline&linkCode=kpe&ref_=cm_sw_r_kb_dp_i8lGyb0HHK8RT&tag=lonel02-20" ></iframe>
 <br>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&amp;controls=0&amp;showinfo=0?autoplay=1&cc_load_policy=1." frameborder="0" allowfullscreen></iframe>
 <!--\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
 <div style="font-family: 'Amatic SC', cursive;">
+</body>
 	<footer><p align="center">
 			© Ethen Strine
 	</p>
 	</div>
+
 </footer>
 </html>
