@@ -5,29 +5,7 @@
     <meta charset="utf-8">
     <title>404 - Ethen Strine</title>
   </head>
-  <body onload="err()">
-<script>
-function err() {
-  document.fullscreenEnabled = document.fullscreenEnabled || document.mozFullScreenEnabled || document.documentElement.webkitRequestFullScreen;
+  <body>
 
-function requestFullscreen(element) {
-    if (element.requestFullscreen) {
-        element.requestFullscreen();
-    } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
-    } else if (element.webkitRequestFullScreen) {
-        element.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);
-    }
-}
-
-if (document.fullscreenEnabled) {
-    requestFullscreen(document.documentElement);
-}
-
-// Actually it's more if you want it to work in Safari, but let's not go there...
-console.log("Don't worry, this is just a 404 screen.");
-}
-
-</script>
   </body>
-</html>
+  </html>
